@@ -47,3 +47,4 @@ API documentation available at:
 
 Logs from the tests are saved in:  
 `api_tests.log`
+

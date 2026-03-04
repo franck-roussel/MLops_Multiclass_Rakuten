@@ -1,4 +1,4 @@
-FROM python:3.8-slim-bullseye
+FROM python:3.9-slim-bullseye@sha256:b9e06687fbfc57f6fe563e94e4c8751e39513dde89afc120dc6f56afe5ffc761
 
 # Évite la génération de fichiers .pyc et force l'affichage des logs en temps réel
 ENV PYTHONDONTWRITEBYTECODE=1
