@@ -24,3 +24,5 @@ jobs:
         run: |
           export PYTHONPATH=$PYTHONPATH:$(pwd)/rakuten_api
           pytest rakuten_api/tests/
+
+  
