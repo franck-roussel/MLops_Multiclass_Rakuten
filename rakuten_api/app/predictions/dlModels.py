@@ -21,7 +21,8 @@ from mlflow.tracking import MlflowClient
 import joblib
 
 module_name =  'models'
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "models/trained_models/final_model.pkl")
 
 @lru_cache()
 def load_tokenizer():
@@ -36,17 +37,13 @@ def load_tokenizer():
     return fitted_tokenizer
 
 
+
 @lru_cache()
 def load_conv1D():
-    
-    #Loads and returns the pretrained model
-    
-    # Load Conv1D
- 
-    #model = load_model(model_dir + conv1D_fname ,  compile = False )    
-
-    model = joblib.load('/models/trained_models/final_model.pkl')
-    return model
+    # Vérifiez si le fichier existe avant de charger pour éviter le crash 500
+    if not os.path.exists(MODEL_PATH):
+        raise FileNotFoundError(f"Modèle introuvable au chemin : {MODEL_PATH}")
+    return joblib.load(MODEL_PATH)
    
 
 @lru_cache()
