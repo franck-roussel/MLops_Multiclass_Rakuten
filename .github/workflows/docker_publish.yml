@@ -41,3 +41,4 @@ jobs:
           tags: |
             ghcr.io/${{ env.REPO_LC }}/mon_api_rakuten:latest
 # Force update
+# Force update
