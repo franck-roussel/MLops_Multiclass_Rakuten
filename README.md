@@ -12,7 +12,7 @@ graph TB
 
     subgraph "API"
         FASTAPI[FASTAPI:8000]
-        MONGODB[MongoDB:27025]
+        MongoDB[MongoDB:27025]
     end
 
     subgraph "Airflow Orchestration"
@@ -137,6 +137,7 @@ make del-containers-and-images
 
 ## Resources
 1. [MLflow Docker Compose Setup](https://github.com/sachua/mlflow-docker-compose)
+
 
 
 
