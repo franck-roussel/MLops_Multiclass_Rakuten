@@ -41,13 +41,14 @@ graph TB
         PLUGINS[/plugins/]
         DATA[/data/]
     end
-    
+
+    USER -->|:8000| FASTAPI
     USER -->|:8082| WEBSERVER
     USER -->|:8888| JUPYTER
     USER -->|:5000| MLFLOW
     USER -->|:9001| MINIO
     USER -->|:5555| FLOWER
-    USER -->|:8000| FASTAPI
+    
     
     WEBSERVER --> POSTGRES_AF
     SCHEDULER --> POSTGRES_AF
@@ -136,5 +137,6 @@ make del-containers-and-images
 
 ## Resources
 1. [MLflow Docker Compose Setup](https://github.com/sachua/mlflow-docker-compose)
+
 
 
