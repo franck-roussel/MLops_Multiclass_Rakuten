@@ -18,12 +18,12 @@ graph TB
         FLOWER[Flower Monitor<br/>:5555]
     end
     
-    subgraph "ML Development"
+    subgraph "API"
         FASTAPI[FASTAPI<br/>:8000]
         MONGODB[MongoDB<br/>:27025]
     end
     
-    subgraph "API"
+    subgraph "ML Development"
         JUPYTER[JupyterLab<br/>:8888]
         MLFLOW[MLflow Server<br/>:5000]
     end
