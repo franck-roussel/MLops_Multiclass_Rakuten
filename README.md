@@ -23,7 +23,7 @@ graph TB
         MONGODB[MongoDB<br/>:27025]
     end
     
-    subgraph "ML Development"
+    subgraph "API"
         JUPYTER[JupyterLab<br/>:8888]
         MLFLOW[MLflow Server<br/>:5000]
     end
@@ -136,3 +136,4 @@ make del-containers-and-images
 
 ## Resources
 1. [MLflow Docker Compose Setup](https://github.com/sachua/mlflow-docker-compose)
+
