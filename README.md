@@ -9,7 +9,12 @@ graph TB
     subgraph "External Access"
         USER[User Browser]
     end
-    
+
+    subgraph "API"
+        FASTAPI[FASTAPI:8000]
+        MONGODB[MongoDB:27025]
+    end
+
     subgraph "Airflow Orchestration"
         WEBSERVER[Airflow Webserver<br/>:8082]
         SCHEDULER[Airflow Scheduler]
@@ -17,12 +22,7 @@ graph TB
         TRIGGERER[Airflow Triggerer]
         FLOWER[Flower Monitor<br/>:5555]
     end
-    
-    subgraph "API"
-        FASTAPI[FASTAPI<br/>:8000]
-        MONGODB[MongoDB<br/>:27025]
-    end
-    
+
     subgraph "ML Development"
         JUPYTER[JupyterLab<br/>:8888]
         MLFLOW[MLflow Server<br/>:5000]
@@ -136,4 +136,5 @@ make del-containers-and-images
 
 ## Resources
 1. [MLflow Docker Compose Setup](https://github.com/sachua/mlflow-docker-compose)
+
 
