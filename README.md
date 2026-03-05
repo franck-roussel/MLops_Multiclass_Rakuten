@@ -57,7 +57,7 @@ graph TB
     WORKER --> POSTGRES_AF
     TRIGGERER --> POSTGRES_AF
     FLOWER --> REDIS
-    MongoDB --> FASTAPi 
+    MongoDB --> FASTAPI 
     
     MLFLOW --> POSTGRES_ML
     MLFLOW --> MINIO
@@ -137,6 +137,7 @@ make del-containers-and-images
 
 ## Resources
 1. [MLflow Docker Compose Setup](https://github.com/sachua/mlflow-docker-compose)
+
 
 
 
