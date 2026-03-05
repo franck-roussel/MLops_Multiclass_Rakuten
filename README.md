@@ -19,6 +19,11 @@ graph TB
     end
     
     subgraph "ML Development"
+        FASTAPI[FASTAPI<br/>:8000]
+        MONGODB[MongoDB<br/>:27025]
+    end
+    
+    subgraph "ML Development"
         JUPYTER[JupyterLab<br/>:8888]
         MLFLOW[MLflow Server<br/>:5000]
     end
@@ -42,6 +47,7 @@ graph TB
     USER -->|:5000| MLFLOW
     USER -->|:9001| MINIO
     USER -->|:5555| FLOWER
+    USER -->|:8000| FASTAPI
     
     WEBSERVER --> POSTGRES_AF
     SCHEDULER --> POSTGRES_AF
@@ -50,6 +56,7 @@ graph TB
     WORKER --> POSTGRES_AF
     TRIGGERER --> POSTGRES_AF
     FLOWER --> REDIS
+    FASTAPi --> MongoDB
     
     MLFLOW --> POSTGRES_ML
     MLFLOW --> MINIO
