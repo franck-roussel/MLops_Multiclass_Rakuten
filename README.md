@@ -43,13 +43,13 @@ graph TB
         DATA[/data/]
     end
 
-    USER -->|:8000| FASTAPI
+    
     USER -->|:8082| WEBSERVER
     USER -->|:8888| JUPYTER
     USER -->|:5000| MLFLOW
     USER -->|:9001| MINIO
     USER -->|:5555| FLOWER
-    
+    USER -->|:8000| FASTAPI
     
     WEBSERVER --> POSTGRES_AF
     SCHEDULER --> POSTGRES_AF
@@ -85,15 +85,6 @@ graph TB
     style REDIS fill:#f8bbd0
     style MINIO fill:#d1c4e9
 ```
-
-## Disclaimers
-Building the environment may take some time. You might consider take a brake with a kit-kat or take some time to read the `docker-compose.yml` file.
-
-Remember that the environment shoould be managed from the `/dockerfile` folder. This mean for example that the notebook should be run from within jupyter and not out of it.
-
-If you need to deploy several model, you need to create another context folder in `pluggins/cd4ml/deploy_model` and connect the latter to airflow somehow (since the pipelines are managed from airflow).
-
-> The minimum requirements for your VM: 16Gb RAM, 32Gb storage
 
 ## Initialization
 Run the following commands to set up everything:
@@ -135,9 +126,6 @@ To delete all running Docker containers and images:
 ```sh
 make del-containers-and-images
 ```
-
-## Resources
-1. [MLflow Docker Compose Setup](https://github.com/sachua/mlflow-docker-compose)
 
 
 
